@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ContactsActivity" android:windowSoftInputMode="adjustPan">
+        <activity
+            android:name=".ContactsActivity"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,7 +20,9 @@
         </activity>
         <activity android:name=".Views.RegisterContactActivity" />
         <activity android:name=".Views.SearchContactActivity" />
-        <activity android:name=".Views.DeleteActivity"></activity>
+        <activity android:name=".Views.DeleteActivity" />
+        <activity android:name=".Views.NewCommentActivity" />
+        <activity android:name=".Views.ListCommentActivity"></activity>
     </application>
 
 </manifest>

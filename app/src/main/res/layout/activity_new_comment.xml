@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jonmid.contactosbasededatos.Views.NewCommentActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nuevo comentario"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:layout_marginBottom="20dp"/>
+
+        <EditText
+            android:id="@+id/id_et_comment_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Titulo"/>
+
+        <EditText
+            android:id="@+id/id_et_comment_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Comentario"
+            android:lines="6"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
+            android:theme="@style/RaisedButtonDark"
+            android:layout_marginTop="20dp"
+            android:onClick="createCommment"/>
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

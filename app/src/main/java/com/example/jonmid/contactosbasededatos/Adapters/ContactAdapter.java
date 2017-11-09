@@ -6,11 +6,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jonmid.contactosbasededatos.Models.Contact;
 import com.example.jonmid.contactosbasededatos.R;
 import com.example.jonmid.contactosbasededatos.Views.DeleteActivity;
+import com.example.jonmid.contactosbasededatos.Views.ListCommentActivity;
+import com.example.jonmid.contactosbasededatos.Views.NewCommentActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,10 +41,34 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.textViewName.setText(contactList.get(position).getName());
         holder.textViewPhone.setText(contactList.get(position).getPhone());
         holder.textViewEmail.setText(contactList.get(position).getEmail());
+
+
+        holder.buttoncomment.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick (View v){
+                Intent  intent = new Intent(context, NewCommentActivity.class);
+                intent.putExtra("id", contactList.get(position).getId());
+                //context.startActivity(intent);
+                v.getContext().startActivity(intent);
+
+
+            }
+        });
+
+        holder.buttonallcoment.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick (View v){
+                Intent  intent = new Intent(context, ListCommentActivity.class);
+                intent.putExtra("id", contactList.get(position).getId());
+                //context.startActivity(intent);
+                v.getContext().startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -52,6 +80,8 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
         TextView textViewName;
         TextView textViewPhone;
         TextView textViewEmail;
+        Button buttoncomment;
+        Button buttonallcoment;
         public ViewHolder(View item) {
             super(item);
 
@@ -60,6 +90,9 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
             textViewName = (TextView) item.findViewById(R.id.id_tv_item_name);
             textViewPhone = (TextView) item.findViewById(R.id.id_tv_item_phone);
             textViewEmail = (TextView) item.findViewById(R.id.id_tv_item_email);
+
+            buttoncomment  = (Button) item.findViewById(R.id.id_btn_item_comment);
+            buttonallcoment = (Button) item.findViewById(R.id.id_btn_item_allcomment);
         }
 
         @Override

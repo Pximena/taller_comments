@@ -68,4 +68,26 @@
             android:textStyle="bold"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/id_btn_item_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Comentarios"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/id_btn_item_allcomment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ver comentarios "
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
 </LinearLayout>
